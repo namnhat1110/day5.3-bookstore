@@ -2,7 +2,7 @@ import React from 'react'
 import { Pagination } from 'react-bootstrap'
 
 const PaginationBar = ({ pageNum, setPageNum, totalBooks, fetchBooks }) => {
-    const totalPage = Math.ceil(totalBooks / 10);
+    const totalPage = Math.ceil(totalBooks / 9);
 
     const fetchNewPage = (p) => {
         setPageNum();
@@ -24,7 +24,7 @@ const PaginationBar = ({ pageNum, setPageNum, totalBooks, fetchBooks }) => {
                 </Pagination.Item>)}
                 {pageNum !== totalPage && (<Pagination.Next onClick={() => fetchNewPage(pageNum + 1)} />)}
 
-                {pageNum !== totalPage && (<Pagination.Last onClick={() => fetchNewPage(totalPage)} />)}
+                <Pagination.Last onClick={() => fetchNewPage(totalPage)} />
 
             </Pagination>
         </div>
