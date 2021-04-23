@@ -5,8 +5,8 @@ const PaginationBar = ({ pageNum, setPageNum, totalBooks, fetchBooks }) => {
     const totalPage = Math.ceil(totalBooks / 9);
 
     const fetchNewPage = (p) => {
-        setPageNum();
-        fetchBooks();
+        setPageNum(p);
+        fetchBooks(p);
     }
 
 
